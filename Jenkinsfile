@@ -10,7 +10,7 @@ pipeline {
       }
       steps {
         echo 'compile maven app'
-        sh 'mvn compile -Dmaven.repo.local=/app/.m2'
+        sh 'mvn compile -Dmaven.repo.local=/root/.m2/repository'
       }
     }
 
