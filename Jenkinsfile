@@ -1,7 +1,13 @@
 pipeline {
-  agent any
+  agent none
   stages {
     stage('build') {
+      agent {
+        docker {
+          image 'maven:3.8.8-eclipse-temurin-21-alpine'
+        }
+
+      }
       steps {
         echo 'compile maven app'
         sh 'mvn compile'
