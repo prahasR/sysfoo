@@ -55,6 +55,7 @@ pipeline {
         }
 
         stage('Docker B&D') {
+          agent any
           steps {
             script {
               docker.withRegistry('https://index.docker.io/v1/', 'dockerlogin') {
