@@ -41,7 +41,7 @@ echo "WORKSPACE = $WORKSPACE"'''
           }
           steps {
             echo 'package maven app'
-            sh 'mvn package -DskipTests'
+            sh 'mvn package -DskipTests -Dmaven.repo.local=$WORKSPACE/.m2/repository'
             archiveArtifacts '**/target/*.jar'
           }
         }
