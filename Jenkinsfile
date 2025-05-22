@@ -31,6 +31,7 @@ echo "WORKSPACE = $WORKSPACE"'''
     }
 
     stage('package') {
+      when { branch 'main'}
       parallel {
         stage('package') {
           agent {
