@@ -10,8 +10,9 @@ pipeline {
       }
       steps {
         echo 'compile maven app'
-        sh 'ls'
-        sh 'mvn clean install'
+        sh '''ls
+echo "WORKSPACE = $WORKSPACE"'''
+        sh 'mvn clean install -Dmaven.repo.local=$WORKSPACE/.m2/repository'
       }
     }
 
