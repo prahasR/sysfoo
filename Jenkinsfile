@@ -11,7 +11,7 @@ pipeline {
       steps {
         echo 'compile maven app'
         sh 'ls'
-        sh 'mvn clean install -Dmaven.repo.local=/app/.m2/repository'
+        sh 'mvn clean install'
       }
     }
 
