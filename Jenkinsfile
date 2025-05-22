@@ -52,7 +52,7 @@ echo "WORKSPACE = $WORKSPACE"'''
             script {
               docker.withRegistry('https://index.docker.io/v1/', 'dockerlogin') {
                 def commitHash = env.GIT_COMMIT.take(7)
-                def dockerImage = docker.build("xxxxxx/sysfoo:${commitHash}", "./")
+                def dockerImage = docker.build("pprahas/sysfoo:${commitHash}", "./")
                 dockerImage.push()
                 dockerImage.push("latest")
                 dockerImage.push("dev")
